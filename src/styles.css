@@ -356,6 +356,144 @@ button:disabled { cursor: default; }
 
 .results-actions { margin-top: 28px; text-align: center; }
 
+/* ---------- Reading ---------- */
+
+.pill:disabled { opacity: 0.5; }
+.pill:disabled:hover { background: #fff; }
+
+.home-section { margin: 30px 0 14px; font-size: 15px; letter-spacing: 1.2px; text-transform: uppercase; color: var(--muted); }
+.home-section:first-of-type { margin-top: 0; }
+
+.r-intro { flex: 1; display: flex; align-items: center; justify-content: center; padding: 24px; background: var(--bg); }
+.r-intro-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 12px;
+  padding: 30px 34px;
+  max-width: 620px;
+  width: 100%;
+}
+.r-intro-card h2 { margin: 6px 0 14px; font-size: 26px; color: var(--teal-darker); }
+.r-intro-card p { line-height: 1.55; }
+
+.r-direction { font-weight: 700; margin: 0 0 16px; font-size: 16px; }
+
+/* Complete the Words */
+.r-single { justify-content: center; overflow-y: auto; }
+.ctw { max-width: 900px; width: 100%; padding: 34px 30px 60px; }
+.ctw-para { font-size: 17px; line-height: 2.5; margin: 0; }
+.ctw-word { white-space: nowrap; }
+.ctw-box {
+  width: 1.15em;
+  height: 1.55em;
+  margin: 0 1px;
+  padding: 0;
+  border: none;
+  border-bottom: 2px solid var(--teal);
+  border-radius: 3px 3px 0 0;
+  background: #eef6f7;
+  text-align: center;
+  font: inherit;
+  font-size: 17px;
+  color: var(--ink);
+  vertical-align: baseline;
+  outline: none;
+}
+.ctw-box:focus { background: #d5ecef; border-bottom-color: var(--teal-darker); }
+.ctw-box:disabled { background: #f2f5f6; }
+
+/* Read in Daily Life */
+.r-text { background: #fafcfc; }
+.daily-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  padding: 18px 22px;
+  line-height: 1.55;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+}
+.daily-card p { margin: 0 0 10px; }
+.daily-card p:last-child { margin-bottom: 0; }
+.daily-card.notice { border-top: 5px solid var(--teal); }
+.daily-card.email { border-top: 5px solid #3949ab; }
+.email-subject { padding-bottom: 10px; border-bottom: 1px solid var(--line); }
+.daily-card.chat { background: #f1f5f6; display: flex; flex-direction: column; gap: 10px; }
+.bubble { background: #fff; border-radius: 12px; padding: 9px 13px; max-width: 92%; box-shadow: 0 1px 2px rgba(0, 0, 0, 0.07); }
+.bubble:nth-child(even) { align-self: flex-end; background: #e2f3f0; }
+.bubble-head { font-size: 13px; margin-bottom: 2px; }
+.bubble-head span { color: var(--muted); }
+.r-mark { background: #fff0a8; padding: 0 2px; border-radius: 2px; }
+
+/* Read an Academic Passage */
+.passage-title { text-align: center; margin: 0 0 16px; font-size: 18px; }
+.passage-para { line-height: 1.7; margin: 0 0 14px; }
+.insert-square {
+  border: 1px solid var(--teal);
+  background: #fff;
+  color: var(--teal-dark);
+  font-size: 14px;
+  line-height: 1;
+  padding: 2px 4px;
+  margin: 0 4px;
+  border-radius: 3px;
+  vertical-align: middle;
+}
+.insert-square:hover:not(:disabled) { background: #d5ecef; }
+.insert-square.static { display: inline-block; cursor: default; }
+.insert-done {
+  background: #d5ecef;
+  font-weight: 700;
+  color: var(--teal-darker);
+  padding: 1px 3px;
+  margin-right: 4px;
+  border-radius: 3px;
+  cursor: pointer;
+  box-decoration-break: clone;
+  -webkit-box-decoration-break: clone;
+}
+.insert-sentence { font-weight: 700; border-left: 4px solid var(--teal); padding: 6px 12px; background: #f3f9fa; }
+
+.r-question { max-width: 640px; }
+.r-question p { line-height: 1.55; }
+.r-prompt { font-weight: 600; font-size: 16px; margin: 0 0 18px; }
+.r-options { display: flex; flex-direction: column; gap: 10px; }
+.r-option {
+  display: flex;
+  align-items: flex-start;
+  gap: 12px;
+  text-align: left;
+  border: 1px solid var(--line);
+  background: #fff;
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 15px;
+  line-height: 1.45;
+  color: var(--ink);
+}
+.r-option:hover:not(:disabled) { border-color: var(--teal); background: #f3f9fa; }
+.r-option.on { border-color: var(--teal); background: #e6f3f5; }
+.r-oval { flex: none; width: 18px; height: 18px; margin-top: 1px; border: 2px solid #7d9aa2; border-radius: 50%; }
+.r-option.on .r-oval { border-color: var(--teal); background: radial-gradient(var(--teal) 0 45%, #fff 50%); }
+
+/* Reading results */
+.dim-gap { margin-top: 12px; padding-top: 14px; border-top: 1px dashed var(--line); }
+.task-result h2 { margin: 0 0 6px; font-size: 19px; }
+.review-set { border-top: 1px solid var(--line); padding: 10px 0; }
+.review-set summary { cursor: pointer; font-weight: 600; display: flex; gap: 10px; align-items: center; }
+.review-type { font-size: 12px; letter-spacing: 0.8px; text-transform: uppercase; color: var(--teal); font-weight: 700; }
+.review-score { margin-left: auto; background: var(--danger); color: #fff; border-radius: 12px; padding: 2px 10px; font-size: 13px; }
+.review-score.all { background: #2e7d32; }
+.review-ctw { display: flex; flex-wrap: wrap; gap: 8px 16px; margin: 12px 0 4px; }
+.review-word.ok { color: #2e7d32; }
+.review-word.bad { color: var(--danger); }
+.review-word em { color: var(--muted); font-style: normal; font-size: 13px; }
+.review-qs { margin: 10px 0 4px; padding-left: 22px; }
+.review-qs li { margin-bottom: 12px; line-height: 1.5; }
+.review-qs li.ok::marker { color: #2e7d32; }
+.review-qs li.bad::marker { color: var(--danger); }
+.review-prompt { font-weight: 600; }
+.review-skill { margin-left: 8px; font-size: 12px; color: var(--muted); font-weight: 400; }
+
 /* ---------- Responsive ---------- */
 
 @media (max-width: 860px) {
@@ -363,4 +501,13 @@ button:disabled { cursor: default; }
   .panel { overflow: visible; }
   .panel.left { width: 100%; border-right: none; border-bottom: 1px solid var(--line); }
   .answer { min-height: 220px; }
+}
+
+@media (max-width: 560px) {
+  .topbar, .subbar { padding-left: 16px; padding-right: 16px; }
+  .logo { font-size: 20px; white-space: nowrap; }
+  .topbar-actions { gap: 6px; }
+  .pill { padding: 7px 12px; font-size: 14px; }
+  .ctw { padding: 22px 16px 40px; }
+  .panel { padding: 20px 16px; }
 }

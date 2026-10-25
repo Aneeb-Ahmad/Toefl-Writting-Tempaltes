@@ -5,12 +5,9 @@ node_modules/
 dist/
 
 # local env / secrets
-.env
-.env.local
 .env.*.local
 
 # editor / OS
-.vscode/
 .idea/
 .DS_Store
 Thumbs.db
@@ -18,3 +15,8 @@ Thumbs.db
 # logs
 *.log
 npm-debug.log*
+
+# ETS practice material (copyrighted) — imported locally with `npm run import:ets`, never committed
+ets-pdfs/
+src/reading/data/*.local.json
+config.bat

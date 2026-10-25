@@ -2,6 +2,9 @@ import { useState } from 'react'
 import HomeScreen from './components/HomeScreen'
 import TaskScreen from './components/TaskScreen'
 import ResultsScreen from './components/ResultsScreen'
+import ReadingExam from './components/reading/ReadingExam'
+import ReadingResults from './components/reading/ReadingResults'
+import { scoreReading } from './reading/rules'
 import { EMAIL_TEMPLATES } from './data/emailTemplates'
 import { DISCUSSION_TEMPLATES } from './data/discussionTemplates'
 import { pickTemplate, markDone } from './storage'
@@ -26,8 +29,26 @@ export default function App() {
   const [responses, setResponses] = useState([])
   const [results, setResults] = useState(null)
   const [gradingNote, setGradingNote] = useState('')
+  const [reading, setReading] = useState(null)
+  const [readingRun, setReadingRun] = useState(0)
+  const [readingMode, setReadingMode] = useState('full')
+
+  function startReading(mode = readingMode) {
+    setReading(null)
+    setReadingMode(mode)
+    setReadingRun((n) => n + 1)
+    setScreen('reading')
+  }
+
+  function finishReading(modules, readingResponses, route) {
+    setReading({ modules, route, mode: readingMode, result: scoreReading(modules, readingResponses) })
+    modules.forEach((m) => m.sets.forEach((s) => markDone('reading', s.id)))
+    setScreen('readingResults')
+  }
 
   function startExam(mode) {
+    if (mode === 'readingFull') return startReading('full')
+    if (mode === 'readingModule') return startReading('module')
     setPlan(buildPlan(mode))
     setIdx(0)
     setResponses([])
@@ -59,6 +80,14 @@ export default function App() {
   }
 
   if (screen === 'home') return <HomeScreen onStart={startExam} />
+
+  if (screen === 'reading') {
+    return <ReadingExam key={readingRun} mode={readingMode} onFinish={finishReading} onHome={() => setScreen('home')} />
+  }
+
+  if (screen === 'readingResults') {
+    return <ReadingResults {...reading} onHome={() => setScreen('home')} onAgain={() => startReading()} />
+  }
 
   if (screen === 'exam') {
     return (

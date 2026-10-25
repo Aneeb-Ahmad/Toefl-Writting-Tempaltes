@@ -10,5 +10,8 @@ export const GEMINI_MODELS = ['gemini-3.6-flash', 'gemini-3.5-flash', 'gemini-fl
 export const EMAIL_SECONDS = 7 * 60
 export const DISCUSSION_SECONDS = 10 * 60
 
+// ETS Test Overview (2026): Reading is up to 50 items in about 30 minutes — 36 seconds per item.
+export const READING_SECONDS_PER_ITEM = 36
+
 export const EMAIL_TARGET_WORDS = 110 // ETS guidance: about 100-120 words
 export const DISCUSSION_MIN_WORDS = 100 // ETS: an effective response has at least 100 words

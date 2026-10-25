@@ -24,6 +24,7 @@ export function resetProgress() {
   try {
     localStorage.removeItem(doneKey('email'))
     localStorage.removeItem(doneKey('discussion'))
+    localStorage.removeItem(doneKey('reading'))
   } catch {}
 }
 
